@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-5"><app-recipe-list (recipeToParent)="recDetails($event)"></app-recipe-list></div>
+  <div class="col-md-7">
+    <app-recipe-detail
+      *ngIf="selectedRecipe; else errorMessage"
+  [rp]="selectedRecipe"></app-recipe-detail>
+  <ng-template #errorMessage><p>Please select a recipe</p></ng-template></div>
+</div>
